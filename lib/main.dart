@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/xt_home.dart';
-import 'xt_course.dart';
-import 'xt_home.dart';
-import 'xt_profile.dart';
+import 'xt_pageManage.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,7 +21,7 @@ class MyAppState extends State {
   Widget build(BuildContext context) {
     return 
       MaterialApp(
-        title: '掌门学堂',
+        title: '学堂',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
@@ -35,24 +32,7 @@ class MyAppState extends State {
           ),
           textTheme: TextTheme(title: TextStyle(color: Colors.black))
         ),
-        home: this.getRigthPage(curType),
+        home: XTPageManage(),
       );
-  }
-
-  Widget getRigthPage(type) {
-    if (type == 0) {
-      return XTHome(changePage: (type){
-        this.setCurTypeStatus(type);
-      },);
-    } else if (type == 1) {
-      return XTCourse(changePage: (type) {
-        this.setCurTypeStatus(type);
-      },);
-    } else if (type == 2) {
-      return XTProfile(changePage: (type){
-        this.setCurTypeStatus(type);
-      },);
-    }
-    return null;
   }
 }

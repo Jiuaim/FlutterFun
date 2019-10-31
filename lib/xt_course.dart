@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'xt_tabbar.dart';
-
 
 class XTCourse extends StatelessWidget {
-  XTCourse({
-    @required this.changePage,
-  });
-
-  final void Function(int type) changePage;
 
   final topBar = AppBar(
     backgroundColor: Color(0xff0000ff),
@@ -25,14 +18,8 @@ class XTCourse extends StatelessWidget {
   @override 
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: topBar,
-        bottomNavigationBar: new Container(
-          color: Color(0xff00ff00),
-          height: 50.0,
-          alignment: Alignment.center,
-          child: XTTabbar(type: 1, onPressed: (type){
-            if (1 != type) this.changePage(type);
-          },),
-        ));
+      appBar: topBar,
+      backgroundColor: Colors.blue,
+    );
   }
 }
