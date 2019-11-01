@@ -50,7 +50,13 @@ flutter:
    - assets/tabbar/svg/ic_tabbar_home_sel.svga
    - assets/tabbar/svg/ic_tabbar_course_sel.svga
    - assets/tabbar/svg/ic_tabbar_profile_sel.svga
-
+   - assets/profile/bg_profile.png
+   - assets/profile/ic_profile_faq.png
+   - assets/profile/ic_profile_feedBack.png
+   - assets/profile/ic_profile_message.png
+   - assets/profile/ic_profile_setting.png
+   - assets/common/ic_cell_more_indicator.png
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

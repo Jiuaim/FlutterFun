@@ -11,7 +11,7 @@ class XTPageManage extends StatefulWidget {
 
 class XTPageManageState extends State<XTPageManage> {
   var curPageIndex = 0;
-  var pageList = [XTHome(), XTCourse(), XTProfile()];
+  final pageList = [XTHome(), XTCourse(), XTProfile()];
   
   void onTap(index) {
     setState(() {
@@ -47,7 +47,7 @@ class XTPageManageState extends State<XTPageManage> {
         selectedFontSize: 11,
         unselectedFontSize: 10,
       ),
-      body: pageList[this.curPageIndex],
+      body: IndexedStack(index: curPageIndex, children: pageList,),
     );
   }
 }

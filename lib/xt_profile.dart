@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/xt_commonCell.dart';
 
 class XTProfile extends StatelessWidget {
   final topBar = AppBar(
@@ -18,6 +19,7 @@ class XTProfile extends StatelessWidget {
     return Scaffold(
       appBar: null,
       backgroundColor: Colors.green,
+      body: XTCommonCell(),
     );
   }
 }

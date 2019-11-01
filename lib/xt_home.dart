@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class XTHome extends StatelessWidget {
+class XTHome extends StatefulWidget {
+  @override 
+  State<StatefulWidget> createState() => new XTHomeState();
+}
+
+class XTHomeState extends State<XTHome> {
   final topBar = AppBar(
     backgroundColor: Color(0xffff0000),
     centerTitle: true,
@@ -14,11 +19,25 @@ class XTHome extends StatelessWidget {
     ],
   );
 
-  @override 
+  int count = 0;
+  void addCount() {
+    setState(() {
+      this.count++;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: topBar,
       backgroundColor: Colors.red,
+      body: Center(
+          child: Text('First: $count', style: TextStyle(fontSize: 30))
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: addCount,
+        child: Icon(Icons.add),
+      )
     );
   }
 }
