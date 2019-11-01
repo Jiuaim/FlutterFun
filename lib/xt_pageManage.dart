@@ -47,7 +47,12 @@ class XTPageManageState extends State<XTPageManage> {
         selectedFontSize: 11,
         unselectedFontSize: 10,
       ),
-      body: IndexedStack(index: curPageIndex, children: pageList,),
+      body: Stack(children: <Widget>[
+        Offstage(child: pageList[0], offstage: curPageIndex != 0,),
+        Offstage(child: pageList[1], offstage: curPageIndex != 1,),
+        Offstage(child: pageList[2], offstage: curPageIndex != 2,),
+      ],) 
+      //IndexedStack(index: curPageIndex, children: pageList,),
     );
   }
 }
