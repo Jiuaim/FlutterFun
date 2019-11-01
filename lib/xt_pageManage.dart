@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:svgaplayer_flutter/player.dart';
 import 'package:testapp/xt_course.dart';
 import 'package:testapp/xt_home.dart';
 import 'package:testapp/xt_profile.dart';
@@ -28,17 +29,17 @@ class XTPageManageState extends State<XTPageManage> {
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage("assets/tabbar/ic_tabbar_home.png")), 
             title: Text("首页"), 
-            activeIcon: ImageIcon(AssetImage("assets/tabbar/ic_tabbar_home.png")),
+            activeIcon: SizedBox(width: 35, height: 35, child: SVGASimpleImage(assetsName: "assets/tabbar/svg/ic_tabbar_home_sel.svga",),),
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage("assets/tabbar/ic_tabbar_course.png")), 
             title: Text("课程"), 
-            activeIcon: ImageIcon(AssetImage("assets/tabbar/ic_tabbar_course.png")),
+            activeIcon: SizedBox(width: 35, height: 35, child: SVGASimpleImage(assetsName: "assets/tabbar/svg/ic_tabbar_course_sel.svga",),),
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage("assets/tabbar/ic_tabbar_profile.png")), 
             title: Text("我的"), 
-            activeIcon: ImageIcon(AssetImage("assets/tabbar/ic_tabbar_profile.png")),
+            activeIcon: SizedBox(width: 35, height: 35, child: SVGASimpleImage(assetsName: "assets/tabbar/svg/ic_tabbar_profile_sel.svga",),),
           ),
         ],
         onTap: this.onTap,
