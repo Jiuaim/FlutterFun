@@ -6,7 +6,7 @@ class XTCourse extends StatefulWidget {
   State<StatefulWidget> createState() => new XTCourseState();
 }
 
-class XTCourseState extends State<XTCourse> {
+class XTCourseState extends State<XTCourse> with AutomaticKeepAliveClientMixin {
   final topBar = AppBar(
     backgroundColor: Color(0xff0000ff),
     centerTitle: true,
@@ -25,6 +25,13 @@ class XTCourseState extends State<XTCourse> {
     setState(() {
       this.count++;
     });
+  }
+
+  bool get wantKeepAlive => true;
+  @override
+  void initState() {
+    print("course init");
+    super.initState();
   }
 
   @override 

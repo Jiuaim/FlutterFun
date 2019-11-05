@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:svgaplayer_flutter/player.dart';
+import 'package:svgaplayer_flutter/svgaplayer_flutter.dart';
 import 'package:testapp/xt_course.dart';
 import 'package:testapp/xt_home.dart';
 import 'package:testapp/xt_profile.dart';
@@ -11,12 +11,20 @@ class XTPageManage extends StatefulWidget {
 
 class XTPageManageState extends State<XTPageManage> {
   var curPageIndex = 0;
+  PageController _pageController;
   final pageList = [XTHome(), XTCourse(), XTProfile()];
   
   void onTap(index) {
     setState(() {
       this.curPageIndex = index;
+      this._pageController.jumpToPage(this.curPageIndex);
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    this._pageController = new PageController(initialPage: this.curPageIndex);
   }
 
   @override
@@ -47,11 +55,10 @@ class XTPageManageState extends State<XTPageManage> {
         selectedFontSize: 11,
         unselectedFontSize: 10,
       ),
-      body: Stack(children: <Widget>[
-        Offstage(child: pageList[0], offstage: curPageIndex != 0,),
-        Offstage(child: pageList[1], offstage: curPageIndex != 1,),
-        Offstage(child: pageList[2], offstage: curPageIndex != 2,),
-      ],) 
+      body: PageView(
+        children: pageList,
+        controller: this._pageController,
+      ),
       //IndexedStack(index: curPageIndex, children: pageList,),
     );
   }

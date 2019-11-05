@@ -5,7 +5,7 @@ class XTHome extends StatefulWidget {
   State<StatefulWidget> createState() => new XTHomeState();
 }
 
-class XTHomeState extends State<XTHome> {
+class XTHomeState extends State<XTHome> with AutomaticKeepAliveClientMixin {
   final topBar = AppBar(
     backgroundColor: Color(0xffff0000),
     centerTitle: true,
@@ -24,6 +24,13 @@ class XTHomeState extends State<XTHome> {
     setState(() {
       this.count++;
     });
+  }
+
+  bool get wantKeepAlive => true;
+  @override
+  void initState() {
+    print("home init");
+    super.initState();
   }
 
   @override
