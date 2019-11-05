@@ -8,10 +8,35 @@ class XTCommonCell extends StatefulWidget {
 class XTCommonCellState extends State<XTCommonCell> {
     @override
     Widget build(BuildContext context) {
-      return Row(children: <Widget>[
-        Image.asset("assets/profile/ic_profile_faq.png"),
-        // Padding(padding: EdgeInsets.only(left: 100), child: Text("这是什么鬼呢"),),
-        Padding(padding: EdgeInsets.only(right: 12), child: Image.asset("assets/common/ic_cell_more_indicator.png"),),
-      ],);
+      return Container(
+        child: Center(
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.only(left: 15),
+                      child: Image.asset("assets/profile/ic_profile_faq.png"),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text("问题反馈"),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.only(right: 15),
+                  child: Image.asset("assets/common/ic_cell_more_indicator.png", scale: 2,),
+                ), 
+              ),
+            ],
+          ),
+        ),
+        height: 44,
+        decoration: BoxDecoration(color: Colors.white),
+      );
     }
   }

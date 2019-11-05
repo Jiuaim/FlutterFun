@@ -10,7 +10,7 @@ class XTPageManage extends StatefulWidget {
 }
 
 class XTPageManageState extends State<XTPageManage> {
-  var curPageIndex = 0;
+  var curPageIndex = 2;
   PageController _pageController;
   final pageList = [XTHome(), XTCourse(), XTProfile()];
   
