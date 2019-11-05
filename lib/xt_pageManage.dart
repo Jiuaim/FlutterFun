@@ -58,6 +58,7 @@ class XTPageManageState extends State<XTPageManage> {
       body: PageView(
         children: pageList,
         controller: this._pageController,
+        physics: NeverScrollableScrollPhysics(),
       ),
       //IndexedStack(index: curPageIndex, children: pageList,),
     );
