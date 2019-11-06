@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
 class XTCommonCell extends StatefulWidget {
+  const XTCommonCell(this.imgPath , this.text);
+
+  final String imgPath;
+  final String text;
+
   @override
   State<StatefulWidget> createState() => new XTCommonCellState();
 }
 
 class XTCommonCellState extends State<XTCommonCell> {
+
     @override
     Widget build(BuildContext context) {
       return Container(
@@ -17,11 +23,11 @@ class XTCommonCellState extends State<XTCommonCell> {
                   children: <Widget>[
                     Container(
                       padding: EdgeInsets.only(left: 15),
-                      child: Image.asset("assets/profile/ic_profile_faq.png"),
+                      child: Image.asset(widget.imgPath),
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 10),
-                      child: Text("问题反馈"),
+                      child: Text(widget.text),
                     ),
                   ],
                 ),
