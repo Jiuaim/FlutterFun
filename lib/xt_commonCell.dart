@@ -41,7 +41,7 @@ class XTCommonCellState extends State<XTCommonCell> {
             ],
           ),
         ),
-        height: 44,
+        height: 60,
         decoration: BoxDecoration(color: Colors.white),
       );
     }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/xt_commonCell.dart';
+import 'package:testapp/xt_profile_header.dart';
 
 class XTProfile extends StatelessWidget {
   final topBar = AppBar(
@@ -25,12 +26,16 @@ class XTProfile extends StatelessWidget {
       appBar: null,
       backgroundColor: Colors.white,
       body: ListView.builder(
-        itemCount: cellConfig.length,
+        itemCount: cellConfig.length + 1,
         itemBuilder: (BuildContext context, int index) {
-          var config = cellConfig[index];
-          return XTCommonCell(config["imgPath"], config["text"]);
+          if (index == 0) {
+            return XTProfileHeader();
+          } else {
+            var config = cellConfig[index - 1];
+            return XTCommonCell(config["imgPath"], config["text"]);
+          }
         },
-      )//XTCommonCell(),
+      ),//XTCommonCell(),
     );
   }
 }
