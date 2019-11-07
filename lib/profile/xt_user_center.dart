@@ -11,12 +11,17 @@ class XTUserCenterState extends State<XTUserCenter> {
     return Scaffold(
       appBar: AppBar(title: Text("个人中心"),),
       body: Center(
-        child: IconButton(
-          tooltip: "跳转",
-          icon: Icon(Icons.add_circle),
-          onPressed: () => {
-            Navigator.pop(context, true)
-          },
+        child: Column(
+          children: <Widget>[
+            IconButton(
+              tooltip: "跳转",
+              icon: Icon(Icons.add_circle),
+              onPressed: () => {
+                Navigator.pop(context, "给你个鬼东西")
+              },
+            ),
+            Text(ModalRoute.of(context).settings.arguments),
+          ],
         ),
       ),
     );

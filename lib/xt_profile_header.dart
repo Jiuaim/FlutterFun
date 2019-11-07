@@ -7,6 +7,15 @@ class XTProfileHeader extends StatefulWidget {
 }
 
 class XTProfileHeaderState extends State<XTProfileHeader> {
+  String showText = "";
+
+  // _gotoUserCenter(BuildContext context, String arg) async {
+  //   String text = await Navigator.pushNamed(context, "/user_center", arguments: arg);
+  //   // setState(() {
+  //   //   showText = text;
+  //   // });
+  // }
+
   @override
   Widget build(BuildContext context) {
 
@@ -18,10 +27,15 @@ class XTProfileHeaderState extends State<XTProfileHeader> {
         child: Center(
           child: Row(
             children: <Widget>[
-              IconButton(icon: Icon(Icons.add_location), onPressed: ()=> {
-                Navigator.pushNamed(context, "/user_center")
-              },),
+              IconButton(icon: Icon(Icons.add_location), onPressed: () => {
+                Navigator.pushNamed(context, "/user_center", arguments: "什么鬼").then((value) {
+                  setState(() {
+                    showText = value;
+                  });
+                }),
+              }),
               Image.asset("assets/profile/bg_profile.png"),
+              Text(showText),
             ],
           ),
         ),
