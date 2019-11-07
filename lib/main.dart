@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/profile/xt_user_center.dart';
+import 'package:testapp/xt_course.dart';
+import 'package:testapp/xt_home.dart';
+import 'package:testapp/xt_profile.dart';
 import 'xt_pageManage.dart';
 
 void main() => runApp(MyApp());
@@ -33,6 +37,13 @@ class MyAppState extends State {
           textTheme: TextTheme(title: TextStyle(color: Colors.black))
         ),
         home: XTPageManage(),
+        routes: <String, WidgetBuilder> {
+          '/home': (BuildContext context) => XTHome(),
+          '/course': (BuildContext context) => XTCourse(),
+          '/profile': (BuildContext context) => XTProfile(),
+
+          '/user_center': (BuildContext context) => XTUserCenter(),
+        },
       );
   }
 }

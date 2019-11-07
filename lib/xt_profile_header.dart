@@ -15,7 +15,16 @@ class XTProfileHeaderState extends State<XTProfileHeader> {
       // decoration: BoxDecoration(color: Colors.red),
       child: Padding(
         padding: EdgeInsets.only(right: 15),
-        child: Image.asset("assets/profile/bg_profile.png"),
+        child: Center(
+          child: Row(
+            children: <Widget>[
+              IconButton(icon: Icon(Icons.add_location), onPressed: ()=> {
+                Navigator.pushNamed(context, "/user_center")
+              },),
+              Image.asset("assets/profile/bg_profile.png"),
+            ],
+          ),
+        ),
       ), 
     );
   }
