@@ -26,6 +26,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+    <key>NSCameraUsageDescription</key>
+    <string>需要使用相机为你拍摄答题照片，是否允许使用？</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>您还没开启照片权限，开启之后即可从相册选择图片或保存图片到本地～</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>方便为你保存图片或从相册中选的图片</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
