@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/home/xt_home_ani.dart';
 import 'package:testapp/profile/xt_user_center.dart';
 import 'package:testapp/xt_course.dart';
 import 'package:testapp/xt_home.dart';
@@ -43,6 +44,8 @@ class MyAppState extends State {
           '/profile': (BuildContext context) => XTProfile(),
 
           '/user_center': (BuildContext context) => XTUserCenter(),
+
+          '/home_ani': (BuildContext context) => XTHomeAni(),
         },
       );
   }

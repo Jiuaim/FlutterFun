@@ -14,6 +14,14 @@ class XTHomeState extends State<XTHome> with AutomaticKeepAliveClientMixin {
     });
   }
 
+  _gotoHomeAni(BuildContext context) {
+    Navigator.pushNamed(context, "/home_ani").then((value){
+      setState(() {
+        count = value;
+      });
+    });
+  }
+
   bool get wantKeepAlive => true;
   @override
   void initState() {
@@ -27,10 +35,21 @@ class XTHomeState extends State<XTHome> with AutomaticKeepAliveClientMixin {
       appBar: null,
       backgroundColor: Colors.red,
       body: Center(
-          child: Text('First: $count', style: TextStyle(fontSize: 30))
+        child: Column(
+          children: <Widget>[
+
+            Text('First: $count', style: TextStyle(fontSize: 30)),
+          ],
+        ), 
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: addCount,
+        onPressed: () => {
+          Navigator.pushNamed(context, "/home_ani").then((value){
+            setState(() {
+              count = value;
+            });
+          })
+        }, //addCount,
         child: Icon(Icons.add),
       )
     );
