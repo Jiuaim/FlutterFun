@@ -15,7 +15,7 @@ class XTHomeState extends State<XTHome> with AutomaticKeepAliveClientMixin {
   }
 
   _gotoHomeAni(BuildContext context) {
-    Navigator.pushNamed(context, "/home_ani").then((value){
+    Navigator.pushNamed(context, "/textfield").then((value){
       setState(() {
         count = value;
       });
@@ -44,7 +44,7 @@ class XTHomeState extends State<XTHome> with AutomaticKeepAliveClientMixin {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
-          Navigator.pushNamed(context, "/home_ani").then((value){
+          Navigator.pushNamed(context, "/textfield").then((value){
             setState(() {
               count = value;
             });
