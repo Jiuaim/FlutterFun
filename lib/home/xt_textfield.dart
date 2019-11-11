@@ -32,6 +32,7 @@ class XTTextFieldState extends State<XTTextField> {
       ),
       body: Column(children: <Widget>[
         TextField(
+          decoration: InputDecoration(hintText: "place text"),
           controller: _controller,
           onChanged: (text) => {
             setState(() {
