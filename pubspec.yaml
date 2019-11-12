@@ -26,6 +26,7 @@ dependencies:
 #  flutter_svg: ^0.14.3
   svgaplayer_flutter: ^0.0.1
   image_picker: ^0.6.1+10
+  path_provider: ^1.4.0
 
 dev_dependencies:
   flutter_test:

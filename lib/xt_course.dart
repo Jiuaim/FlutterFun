@@ -61,7 +61,9 @@ class XTCourseState extends State<XTCourse> with AutomaticKeepAliveClientMixin {
           child: Icon(Icons.camera_alt),
           color: Color(0xff0000ff),
         ),
-        // title: Center(child: Icon(Icons.photo_camera),),
+        title: Center(child: IconButton(icon: Icon(Icons.photo_camera), onPressed: ()=> {
+          Navigator.pushNamed(context, '/file')
+        },),),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
